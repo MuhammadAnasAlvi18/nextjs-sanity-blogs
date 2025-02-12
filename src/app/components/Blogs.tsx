@@ -17,12 +17,12 @@ interface BlogCardProps {
 const Blogs = ({data} : BlogCardProps) => {
 
   return (
-    <div className='grid grid-cols-2 gap-12'>
+    <div className='grid lg:grid-cols-2 grid-cols-1 gap-12'>
         {
             data.map((post, idx)=>{
                 return(
                     <Card key={idx}>
-                        <Image src={urlFor(post.titleImage).url()} className='w-full h-[300px] object-fill rounded-t-lg' alt='image' width={500} height={500} priority unoptimized />
+                        <Image src={urlFor(post.titleImage).url()} className='w-full h-[300px] object-cover rounded-t-lg' alt='image' width={500} height={500} priority />
                         <CardContent className='mt-6 flex flex-col flex-1'>
                             <h3 className='text-2xl font-semibold line-clamp-2'>{post.title}</h3>
                             <p className='line-clamp-3 text-base leading-7 font-medium mt-5'>{post.smallDescription}</p>
